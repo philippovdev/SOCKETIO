@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WS</title>
+</head>
+<body>
+<script>
+    let ws = new WebSocket('ws://localhost:8000')
+
+    ws.onopen = (event) => {
+        ws.send("Message from client! Ua-ha-ha!!!")
+    }
+
+    ws.onmessage = (event) => {
+        console.log(event.data)
+    }
+</script>
+</body>
+</html>
